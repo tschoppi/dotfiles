@@ -5,7 +5,13 @@ if [ ! -d $HOME ]; then
     exit 1
 fi
 
+if [ $# != 1 ]; then
+    echo "Did you edit fehbg?"
+fi
+
 cp tmux.conf $HOME/.tmux.conf
 cp vimrc $HOME/.vimrc
+cp i3_config $HOME/.config/i3/config
+cp fehbg $HOME/.fehbg
 
 exit 0
