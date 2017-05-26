@@ -180,6 +180,8 @@ exec ~/.fehbg
 exec xrdb ~/.Xresources
 # Remove all the beeps
 exec xset -b
+# Notification server
+exec dunst
 
 # Disable mouse warping
 mouse_warping none
