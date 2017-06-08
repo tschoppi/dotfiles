@@ -11,11 +11,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 
@@ -62,10 +64,25 @@ nnoremap <Leader>a :Ack!<Space>
 
 " --- fzf ---
 nnoremap <Leader>f :FZF<CR>
+inoremap <expr> <C-x><C-g> fzf#complete('git log --format=%s')
 
-" Quick tab movement
-nnoremap <S-Tab> :tabprevious<CR>
-nnoremap <C-Tab> :tabnext<CR>
+" General function to use as a FZF sink for inserting
+" TODO: Currently this still adds a line below the current selected line.
+"       Possibly this should be changed to substitute the entire line for the
+"       use case of inserting a title line for git commits
+function! s:insert_sink(line)
+  put! =a:line
+endfunction
+
+" This command strips final parenthetical remarks from commit titles and ignores
+" git commit reverts, and feeds the resulting unique list of titles to fzf.
+command! PastCommits :call fzf#run({'source': 'git log --format=%s | sed -e "s/ (.*)$//" -e "/^Revert/d" | sort -u -V -r', 'sink': function('s:insert_sink')})
+
+nnoremap <Leader>g :PastCommits<CR>
+
+" --- NerdCommenter ---
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign = 'left'
 
 " Quick quickfix movement
 nnoremap <Leader>] :cnext<CR>
