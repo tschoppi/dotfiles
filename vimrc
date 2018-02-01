@@ -17,6 +17,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
@@ -32,7 +33,8 @@ set number          " Line numbers
 set ruler           " Cursor position information
 set laststatus=2    " Always show the status bar
 
-set formatoptions=tcqrj
+set formatoptions=tcqrjn
+set nojoinspaces
 set textwidth=80
 
 set autoindent      " Automatic Indentation of new lines
@@ -55,9 +57,6 @@ colorscheme solarized
 " Change leader to <Bar>
 let mapleader = " "
 
-"" Vinegar configuration
-map <C-n> :Explore<CR>
-
 " --- ack.vim ---
 let g:ackprg = 'ag --vimgrep' " Use Ag instead of ack
 nnoremap <Leader>a :Ack!<Space>
@@ -67,9 +66,6 @@ nnoremap <Leader>f :FZF<CR>
 inoremap <expr> <C-x><C-g> fzf#complete('git log --format=%s')
 
 " General function to use as a FZF sink for inserting
-" TODO: Currently this still adds a line below the current selected line.
-"       Possibly this should be changed to substitute the entire line for the
-"       use case of inserting a title line for git commits
 function! s:insert_sink(line)
   put! =a:line
 endfunction
