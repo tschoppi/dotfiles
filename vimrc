@@ -22,10 +22,12 @@ Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 
-set tabstop=4		" Make tabs 4 characters wide
-set shiftwidth=4	" Make indents 4 characters wide
+set rtp+=/usr/bin/fzf
+
+set tabstop=2		" Make tabs 2 characters wide
+set shiftwidth=2	" Make indents 2 characters wide
 set expandtab		" Make tabs automatically to spaces
-set softtabstop=4	" Make backspace behave as expected
+set softtabstop=2	" Make backspace behave as expected
 set incsearch		" Incremental search
 
 set linebreak       " Soft break long lines at word boundaries
@@ -33,9 +35,14 @@ set number          " Line numbers
 set ruler           " Cursor position information
 set laststatus=2    " Always show the status bar
 
+" Clear search highlighting before redrawing the screen
+set nohls
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+
 set formatoptions=tcqrjn
 set nojoinspaces
 set textwidth=80
+set list            " Show list characters
 
 set autoindent      " Automatic Indentation of new lines
 set smartindent     " Smart indentation of text and code
@@ -45,6 +52,7 @@ filetype plugin indent on
 autocmd Filetype gitcommit setlocal textwidth=72
 autocmd Filetype C setlocal tabstop=8 shiftwidth=8 softtabstop=8
 autocmd Filetype cpp setlocal shiftwidth=2 softtabstop=2 
+autocmd Filetype python setlocal shiftwidth=2 softtabstop=2
 autocmd Filetype Makefile setlocal noexpandtab
 
 syntax on
@@ -63,6 +71,8 @@ nnoremap <Leader>a :Ack!<Space>
 
 " --- fzf ---
 nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>w :Windows<CR>
 inoremap <expr> <C-x><C-g> fzf#complete('git log --format=%s')
 
 " General function to use as a FZF sink for inserting

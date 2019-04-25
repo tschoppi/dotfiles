@@ -8,18 +8,17 @@ Xft.lcdfilter:  lcddefault
 
 !! urxvt settings
 ! pacman -S urxvt-perls for the perl plugin stuff
-URxvt.font:	xft:Anonymous Pro:size=11
+URxvt.font:	-*-tamsyn-medium-*-*-*-17-*-*-*-*-*-iso8859-1,xft:Anonymous Pro:size=11
 URxvt.letterSpace: 0
 URxvt*scrollBar:    false
 URxvt.perl-ext-common: default,url-select,keyboard-select
 URxvt.keysym.M-u:   perl:url-select:select_next
-URxvt.url-select.launcher:  /usr/bin/firefox
+URxvt.url-select.launcher:  /usr/bin/chromium
 URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
 ! search backwards directly with meta-s
 URxvt.keysym.M-s:   perl:keyboard-select:search
-! Disable bold fonts
-URxvt.boldFont:
+URxvt.boldFont: -*-tamsyn-bold-*-*-*-17-*-*-*-*-*-iso8859-1
 ! For mutt email notifications
 URxvt*urgentOnBell: true
 
