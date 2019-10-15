@@ -12,6 +12,9 @@
   ds = diff --staged
   wdiff = diff --color-words="\\w+|."
 
+[commit]
+  verbose = true
+
 [merge]
   tool = vimdiff
 
