@@ -69,7 +69,7 @@ let g:ackprg = 'ag --vimgrep' " Use Ag instead of ack
 nnoremap <Leader>a :Ack!<Space>
 
 " --- fzf ---
-nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>f :FZF --preview=head\ -25\ {}<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>w :Windows<CR>
 inoremap <expr> <C-x><C-g> fzf#complete('git log --format=%s')
