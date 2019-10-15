@@ -1,26 +1,25 @@
-" Vundle installing with command
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Run vim and the command :PluginInstall
+" Install Plug as follows:
+" nvim:
+"   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" vim:
+"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" Run (n)vim and the command :PlugInstall
 
+call plug#begin('~/.vim/bundle')
 
-" Vundle management stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'Lokaltog/vim-powerline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-rails'
+Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
-" Vundle manages Vundle
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-vinegar'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-rails'
-Plugin 'mileszs/ack.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-
-call vundle#end()
+call plug#end()
 
 set rtp+=/usr/bin/fzf
 
