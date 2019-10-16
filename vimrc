@@ -24,11 +24,11 @@ call plug#end()
 
 set rtp+=/usr/bin/fzf
 
-set tabstop=2		" Make tabs 2 characters wide
-set shiftwidth=2	" Make indents 2 characters wide
-set expandtab		" Make tabs automatically to spaces
-set softtabstop=2	" Make backspace behave as expected
-set incsearch		" Incremental search
+set tabstop=2     " Make tabs 2 characters wide
+set shiftwidth=2  " Make indents 2 characters wide
+set expandtab     " Make tabs automatically to spaces
+set softtabstop=2 " Make backspace behave as expected
+set incsearch     " Incremental search
 
 set linebreak       " Soft break long lines at word boundaries
 set number          " Line numbers
