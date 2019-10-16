@@ -93,3 +93,7 @@ let g:NERDDefaultAlign = 'left'
 " Quick quickfix movement
 nnoremap <Leader>] :cnext<CR>
 nnoremap <Leader>[ :cprev<CR>
+
+" --- coc.vim ---
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
