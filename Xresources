@@ -13,7 +13,7 @@ URxvt.letterSpace: 0
 URxvt*scrollBar:    false
 URxvt.perl-ext-common: default,url-select,keyboard-select
 URxvt.keysym.M-u:   perl:url-select:select_next
-URxvt.url-select.launcher:  /usr/bin/chromium
+URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
 ! search backwards directly with meta-s
