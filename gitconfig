@@ -7,7 +7,7 @@
   o = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --date-order --color
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --branches --tags --remotes --date-order --color
   lg = log --graph --pretty=format:'%<|(18)%Cred%h%Creset %<|(72)%s %C(blue)<%an>%Creset %C(yellow)%D%Creset' --abbrev-commit --color --all --date-order
-  lo = log --pretty=format:'%Cred%h%Creset - %C(yellow)%ad%Creset - %s' --date=format:'%b %d %H:%M' --color
+  lo = log --pretty=format:'%Cred%h%Creset - %C(yellow)%ad%Creset - %C(blue)<%an>%Creset - %s' --date=format:'%b %d %H:%M' --color
   d = diff --ignore-all-space
   ds = diff --staged
   wdiff = diff --color-words="\\w+|."
