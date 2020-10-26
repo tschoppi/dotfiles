@@ -12,6 +12,9 @@
   ds = diff --staged
   wdiff = diff --color-words="\\w+|."
 
+[core]
+  pager = delta --paging=always
+
 [commit]
   verbose = true
 
@@ -31,3 +34,29 @@
   suffix = "-stage"
   suffix = "-rc"
   suffix = "-"
+
+[delta]
+  syntax-theme = none
+  features = default
+
+[delta "default"]
+  keep-plus-minus-markers
+  plus-style = green normal
+  plus-emph-style = green normal
+  plus-non-emph-style = normal normal
+  plus-empty-line-marker-style = normal green
+  minus-style = red normal
+  minus-emph-style = red normal
+  minus-non-emph-style = normal normal
+  minus-empty-line-marker-style = normal red
+
+[delta "highlight"]
+  plus-style = 235 113
+  plus-emph-style = 235 113
+  plus-non-emph-style = 237 193
+  minus-style = 233 203
+  minus-emph-style = 233 203
+  minus-non-emph-style = 236 216
+
+[interactive]
+  diffFilter = delta --color-only
