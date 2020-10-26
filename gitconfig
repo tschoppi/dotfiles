@@ -35,6 +35,9 @@
   suffix = "-rc"
   suffix = "-"
 
+[rebase]
+  autosquash = true
+
 [delta]
   syntax-theme = none
   features = default
