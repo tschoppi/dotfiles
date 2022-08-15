@@ -18,6 +18,7 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
 ! search backwards directly with meta-s
 URxvt.keysym.M-s:   perl:keyboard-select:search
+! Disable bold fonts
 URxvt.boldFont: -*-tamsyn-bold-*-*-*-17-*-*-*-*-*-iso8859-1
 ! For mutt email notifications
 URxvt*urgentOnBell: true
