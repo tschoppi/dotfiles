@@ -12,7 +12,7 @@ font -*-tamsyn-medium-*-*-*-12-*-*-*-*-*-iso8859-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -110,7 +110,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Screenshots
-bindsym --release Print exec "scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/screenshots/'"
+bindsym --release Print exec "scrot -f -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/screenshots/'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
