@@ -66,7 +66,7 @@ colorscheme solarized
 let mapleader = " "
 
 " --- ack.vim ---
-let g:ackprg = 'ag --vimgrep' " Use Ag instead of ack
+let g:ackprg = 'rg --vimgrep' " Use Ag instead of ack
 nnoremap <Leader>a :Ack!<Space>
 
 " --- fzf ---
